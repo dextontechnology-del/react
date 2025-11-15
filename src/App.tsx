@@ -47,9 +47,7 @@ function App() {
     }
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+
 
   return (
     <div className="app">
@@ -273,7 +271,6 @@ function App() {
         <div className="container">
           <h2 className="section-title" data-aos="fade-up">Our Premium Services</h2>
           <p className="section-subtitle" data-aos="fade-up" data-aos-delay="100">Innovative solutions tailored to drive your business forward in the digital landscape</p>
-          
           <div className="services-grid">
             {/* Web Development Card */}
             <div className="service-card" data-aos="fade-up" data-aos-delay="150">
@@ -382,8 +379,6 @@ function App() {
               </a>
             </div>
           </div>
-          
-         
         </div>
       </section>
 
