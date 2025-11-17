@@ -47,7 +47,35 @@ function App() {
     }
   };
 
-
+  const projects = [
+    {
+      title: "Hansh Couture",
+      description: "Elegant e-commerce platform for Indian and Western wear featuring curated collections, premium designs, and seamless shopping experience.",
+      image: "/assets/Projects/HanshCoutureMainHome.png",
+      logo: "/assets/Projects/Hansh_Couture_Main_Logo.avif",
+      link: "https://hanshcouture.com/",
+      tags: ["E-Commerce", "Fashion", "React", "Shopify"],
+      color: "#d4a574"
+    },
+    {
+      title: "AstroWorld",
+      description: "Premium astrology services platform offering horoscope readings, birth chart analysis, and personalized astrological consultations.",
+      image: "/assets/Projects/AstroWorldHome.png",
+      logo: "/assets/Projects/AstroWorldLogo.png",
+      link: "https://dexton-astroworld.vercel.app/",
+      tags: ["Web App", "Astrology", "React", "API Integration"],
+      color: "#6B46C1"
+    },
+    {
+      title: "Shree Ganraya Events",
+      description: "Professional event management services website showcasing corporate events, weddings, conferences with modern design.",
+      image: "/assets/Projects/GanrayaEventHome.png",
+      logo: "/assets/Projects/GANRAYA_EVNT_LOGO.png",
+      link: "https://ganraya-events.vercel.app/",
+      tags: ["Event Management", "Business", "React", "Booking System"],
+      color: "#f00946"
+    }
+  ];
 
   return (
     <div className="app">
@@ -68,12 +96,9 @@ function App() {
             </a>
           </div>
 
-          <div className="header-nav">
-       
-
-            <nav className={`site-navigation ${isMenuOpen ? 'active' : ''}`}>
+          <nav className={`site-navigation ${isMenuOpen ? 'active' : ''}`}>
               <ul className="nav-menu">
-                {['home', 'about', 'services', 'contact'].map((item, index) => (
+                {['home', 'about', 'services', 'projects', 'contact'].map((item, index) => (
                   <li key={item} className="nav-item" data-aos="fade-down" data-aos-delay={100 + (index * 100)}>
                     <a 
                       href={`#${item}`}
@@ -91,7 +116,16 @@ function App() {
                 ))}
               </ul>
             </nav>
-          </div>
+
+            <button 
+              className={`mobile-menu-toggle ${isMenuOpen ? 'active' : ''}`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+            </button>
         </div>
       </header>
 
@@ -189,36 +223,74 @@ function App() {
           <div className="section-header" data-aos="fade-up">
             <span className="section-tagline">Who We Are</span>
             <h2>About Dexton Technology</h2>
-            {/* <div className="section-divider"></div> */}
+            <p className="section-subtitle">Transforming ideas into digital reality with passion and precision</p>
           </div>
 
           <div className="about-content">
-            <div className="about-image" data-aos="fade-right" data-aos-delay="100">
-              <div className="about-image-inner">
-                <div className="floating-shape shape-1"></div>
-                <div className="floating-shape shape-2"></div>
-                <div className="about-main-image">
-                  <img 
-                    src="/about-illustration.svg" 
-                    alt="About Dexton Technology" 
-                    onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
-                      const target = e.target as HTMLImageElement;
-                      target.onerror = null;
-                      target.src = 'https://img.freepik.com/free-vector/app-development-illustration_52683-47931.jpg';
-                    }} 
-                  />
+            <div className="about-visual" data-aos="fade-right" data-aos-delay="100">
+              <div className="tech-showcase">
+                <div className="tech-orbit">
+                  <div className="center-core">
+                    <div className="core-inner"></div>
+                    <div className="core-pulse"></div>
+                  </div>
+                  <div className="orbit-item orbit-1" data-tech="React">
+                    <div className="tech-icon">⚛️</div>
+                    <span className="tech-label">React</span>
+                  </div>
+                  <div className="orbit-item orbit-2" data-tech="Node">
+                    <div className="tech-icon">🟢</div>
+                    <span className="tech-label">Node.js</span>
+                  </div>
+                  <div className="orbit-item orbit-3" data-tech="Cloud">
+                    <div className="tech-icon">☁️</div>
+                    <span className="tech-label">Cloud</span>
+                  </div>
+                  <div className="orbit-item orbit-4" data-tech="AI">
+                    <div className="tech-icon">🤖</div>
+                    <span className="tech-label">AI/ML</span>
+                  </div>
+                  <div className="orbit-item orbit-5" data-tech="Mobile">
+                    <div className="tech-icon">📱</div>
+                    <span className="tech-label">Mobile</span>
+                  </div>
+                  <div className="orbit-item orbit-6" data-tech="Database">
+                    <div className="tech-icon">🗄️</div>
+                    <span className="tech-label">Database</span>
+                  </div>
+                </div>
+                <div className="tech-stats">
+                  <div className="tech-stat">
+                    <span className="stat-value">50+</span>
+                    <span className="stat-name">Projects</span>
+                  </div>
+                  <div className="tech-stat">
+                    <span className="stat-value">15+</span>
+                    <span className="stat-name">Technologies</span>
+                  </div>
+                  <div className="tech-stat">
+                    <span className="stat-value">95%</span>
+                    <span className="stat-name">Success</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div className="about-text" data-aos="fade-left" data-aos-delay="200">
-              <div className="about-badge" data-aos="fade-up" data-aos-delay="300">
-                <span>🚀 Startup Since 2025</span>
+              <div className="about-badges">
+                <div className="about-badge" data-aos="fade-up" data-aos-delay="300">
+                  <span>🚀 Startup Since 2025</span>
+                </div>
+                <div className="about-badge" data-aos="fade-up" data-aos-delay="400">
+                  <span>💡 Innovation Driven</span>
+                </div>
               </div>
               
-              <h3>Empowering Businesses Through Innovation</h3>
+              <h3>Empowering Businesses Through Digital Innovation</h3>
               
-              <p className="lead">At Dexton Technology, we're not just another IT company - we're your digital transformation partners on a mission to revolutionize how businesses leverage technology.</p>
+              <p className="lead">At Dexton Technology, we're not just another IT company - we're your digital transformation partners on a mission to revolutionize how businesses leverage technology for exponential growth.</p>
+              
+              <p className="description">Founded with a vision to bridge the gap between complex technology and business needs, we specialize in creating cutting-edge digital solutions that drive measurable results. Our team of passionate developers and designers work tirelessly to transform your ideas into powerful, user-centric applications.</p>
               
               <div className="about-features">
                 <div className="feature-item" data-aos="fade-up" data-aos-delay="100">
@@ -229,7 +301,7 @@ function App() {
                   </div>
                   <div>
                     <h4>Innovation First</h4>
-                    <p>Cutting-edge solutions tailored to your needs</p>
+                    <p>Cutting-edge solutions tailored to your unique business challenges</p>
                   </div>
                 </div>
                 
@@ -241,28 +313,32 @@ function App() {
                     </svg>
                   </div>
                   <div>
-                    <h4>Rapid Growth</h4>
-                    <p>Growing at an impressive pace since our inception</p>
+                    <h4>Rapid Delivery</h4>
+                    <p>Agile development ensuring quick time-to-market for your projects</p>
+                  </div>
+                </div>
+
+                <div className="feature-item" data-aos="fade-up" data-aos-delay="300">
+                  <div className="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4>Quality Assured</h4>
+                    <p>Rigorous testing and best practices in every project we deliver</p>
                   </div>
                 </div>
               </div>
 
-              <div className="about-stats" data-aos="fade-up" data-aos-delay="300">
-                <div className="stat-item">
-                  <div className="stat-number" data-count="50">6</div>
-                  <div className="stat-label">Projects</div>
-                </div>
-                <div className="stat-item">
-                  <div className="stat-number" data-count="20">4</div>
-                  <div className="stat-label">Clients</div>
-                </div>
-                <div className="stat-item">
-                  <div className="stat-number" data-count="15">5</div>
-                  <div className="stat-label">Team Members</div>
-                </div>
+              <div className="about-cta">
+                <a href="#contact" className="cta-button primary">Let's Work Together</a>
+                <a href="#projects" className="cta-button secondary">View Our Work</a>
               </div>
             </div>
           </div>
+
+          
         </div>
       </section>
 
@@ -378,6 +454,65 @@ function App() {
                 </svg>
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="projects">
+        <div className="container">
+          <div className="section-header" data-aos="fade-up">
+            <h2>Featured Projects</h2>
+            <p>Explore our latest work and digital innovations</p>
+          </div>
+          <div className="projects-grid">
+            {projects.map((project, index) => (
+              <div key={index} className="project-card" data-aos="fade-up" data-aos-delay={index * 100} style={{ '--project-color': project.color } as React.CSSProperties}>
+                <div className="project-image-container">
+                  <div className="project-image-wrapper">
+                    <img src={project.image} alt={project.title} className="project-screenshot" onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = '/assets/logo.png';
+                    }} />
+                    <div className="project-overlay">
+                      <div className="project-content">
+                        <div className="project-logo-wrapper">
+                          <img src={project.logo} alt={`${project.title} Logo`} className="project-logo" onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = '/favicon.png';
+                          }} />
+                        </div>
+                        <h3>{project.title}</h3>
+                        <p>{project.description}</p>
+                        <div className="project-tags">
+                          {project.tags.map((tag, tagIndex) => (
+                            <span key={tagIndex} className="project-tag">{tag}</span>
+                          ))}
+                        </div>
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
+                          View Project <span className="arrow">→</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="project-info">
+                  <div className="project-info-header">
+                    <img src={project.logo} alt={`${project.title} Logo`} className="project-info-logo" onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = '/favicon.png';
+                    }} />
+                    <h3>{project.title}</h3>
+                  </div>
+                  <p>{project.description}</p>
+                  <div className="project-tags-mini">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span key={tagIndex} className="tag-mini">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -552,6 +687,10 @@ function App() {
                   <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }} className="footer-link">
                     <span className="link-icon">→</span>
                     <span>Services</span>
+                  </a></li>
+                  <li><a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }} className="footer-link">
+                    <span className="link-icon">→</span>
+                    <span>Projects</span>
                   </a></li>
                   <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="footer-link">
                     <span className="link-icon">→</span>
