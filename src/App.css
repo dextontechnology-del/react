@@ -3049,6 +3049,17 @@ section {
   z-index: 1;
 }
 
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.project-card-link:hover {
+  transform: translateY(-5px);
+}
+
 .project-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);

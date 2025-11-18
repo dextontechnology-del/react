@@ -467,51 +467,62 @@ function App() {
           </div>
           <div className="projects-grid">
             {projects.map((project, index) => (
-              <div key={index} className="project-card" data-aos="fade-up" data-aos-delay={index * 100} style={{ '--project-color': project.color } as React.CSSProperties}>
-                <div className="project-image-container">
-                  <div className="project-image-wrapper">
-                    <img src={project.image} alt={project.title} className="project-screenshot" onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = '/assets/logo.png';
-                    }} />
-                    <div className="project-overlay">
-                      <div className="project-content">
-                        <div className="project-logo-wrapper">
-                          <img src={project.logo} alt={`${project.title} Logo`} className="project-logo" onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.src = '/favicon.png';
-                          }} />
+              <a 
+                key={index} 
+                href={project.link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="project-card-link"
+                data-aos="fade-up" 
+                data-aos-delay={index * 100} 
+                style={{ '--project-color': project.color } as React.CSSProperties}
+              >
+                <div className="project-card">
+                  <div className="project-image-container">
+                    <div className="project-image-wrapper">
+                      <img src={project.image} alt={project.title} className="project-screenshot" onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = '/assets/logo.png';
+                      }} />
+                      <div className="project-overlay">
+                        <div className="project-content">
+                          <div className="project-logo-wrapper">
+                            <img src={project.logo} alt={`${project.title} Logo`} className="project-logo" onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.src = '/favicon.png';
+                            }} />
+                          </div>
+                          <h3>{project.title}</h3>
+                          <p>{project.description}</p>
+                          <div className="project-tags">
+                            {project.tags.map((tag, tagIndex) => (
+                              <span key={tagIndex} className="project-tag">{tag}</span>
+                            ))}
+                          </div>
+                          <span className="project-link">
+                            View Project <span className="arrow">→</span>
+                          </span>
                         </div>
-                        <h3>{project.title}</h3>
-                        <p>{project.description}</p>
-                        <div className="project-tags">
-                          {project.tags.map((tag, tagIndex) => (
-                            <span key={tagIndex} className="project-tag">{tag}</span>
-                          ))}
-                        </div>
-                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                          View Project <span className="arrow">→</span>
-                        </a>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="project-info">
-                  <div className="project-info-header">
-                    <img src={project.logo} alt={`${project.title} Logo`} className="project-info-logo" onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = '/favicon.png';
-                    }} />
-                    <h3>{project.title}</h3>
+                  <div className="project-info">
+                    <div className="project-info-header">
+                      <img src={project.logo} alt={`${project.title} Logo`} className="project-info-logo" onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = '/favicon.png';
+                      }} />
+                      <h3>{project.title}</h3>
+                    </div>
+                    <p>{project.description}</p>
+                    <div className="project-tags-mini">
+                      {project.tags.map((tag, tagIndex) => (
+                        <span key={tagIndex} className="tag-mini">{tag}</span>
+                      ))}
+                    </div>
                   </div>
-                  <p>{project.description}</p>
-                  <div className="project-tags-mini">
-                    {project.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="tag-mini">{tag}</span>
-                    ))}
-                  </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
