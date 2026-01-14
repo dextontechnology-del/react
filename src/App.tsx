@@ -562,7 +562,7 @@ function App() {
                     </div>
                     <div>
                       <h4>Call Us</h4>
-                      <p>+91 8780687178</p>
+                      <p>+91 7201060510</p>
                     </div>
                   </div>
                   
