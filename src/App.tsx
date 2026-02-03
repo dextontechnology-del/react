@@ -78,6 +78,7 @@ function App() {
   ];
 
   return (
+    <div className="main-container">
     <div className="app">
       {/* Navigation */}
       <header className={`main-header ${scrolled ? 'scrolled' : ''}`}>
@@ -131,7 +132,6 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="hero">
-        <div className="hero-overlay"></div>
         <div className="container">
           <div className="hero-content">
             <h1 data-aos="fade-up" className="hero-title">
@@ -345,7 +345,7 @@ function App() {
       {/* Services Section */}
       <section id="services" className="services">
         <div className="container">
-          <h2 className="section-title" data-aos="fade-up">Our Premium Services</h2>
+          <h2 className="section-title" data-aos="fade-up" style={{display:'flex', justifyContent:'center'}}>Our Premium Services</h2>
           <p className="section-subtitle" data-aos="fade-up" data-aos-delay="100">Innovative solutions tailored to drive your business forward in the digital landscape</p>
           <div className="services-grid">
             {/* Web Development Card */}
@@ -651,7 +651,7 @@ function App() {
         </div>
         <div className="container">
           <div className="footer-content">
-            <div className="footer-main">
+            <div className="footer-grid">
               <div className="footer-brand" data-aos="fade-up">
                 <div className="footer-logo">
                   {/* <img src="./assets/logo.png" alt="Dexton Technology" className="logo-img" /> */}
@@ -683,41 +683,7 @@ function App() {
                   </a>
                 </div>
               </div>
-              
-              <div className="footer-links" data-aos="fade-up" data-aos-delay="50">
-                <h4 className="footer-heading">Quick Links</h4>
-                <ul>
-                  <li><a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="footer-link">
-                    <span className="link-icon">→</span>
-                    <span>Home</span>
-                  </a></li>
-                  <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }} className="footer-link">
-                    <span className="link-icon">→</span>
-                    <span>About Us</span>
-                  </a></li>
-                  <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }} className="footer-link">
-                    <span className="link-icon">→</span>
-                    <span>Services</span>
-                  </a></li>
-                  <li><a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }} className="footer-link">
-                    <span className="link-icon">→</span>
-                    <span>Projects</span>
-                  </a></li>
-                  <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="footer-link">
-                    <span className="link-icon">→</span>
-                    <span>Contact</span>
-                  </a></li>
-                  <li><a href="#" className="footer-link">
-                    <span className="link-icon">→</span>
-                    <span>Case Studies</span>
-                  </a></li>
-                  <li><a href="#" className="footer-link">
-                    <span className="link-icon">→</span>
-                    <span>Blog</span>
-                  </a></li>
-                </ul>
-              </div>
-              
+
               <div className="footer-contact" data-aos="fade-up" data-aos-delay="100">
                 <h4 className="footer-heading">Contact Us</h4>
                 <ul className="contact-info">
@@ -755,6 +721,46 @@ function App() {
                   </li>
                 </ul>
               </div>
+              
+              <div className="footer-links" data-aos="fade-up" data-aos-delay="50">
+                <h4 className="footer-heading">Quick Links</h4>
+                <div style={{display:'flex', gap:'40px', textAlign:'left'}}>
+                <ul>
+                  <li><a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="footer-link">
+                    <span className="link-icon">→</span>
+                    <span>Home</span>
+                  </a></li>
+                  <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }} className="footer-link">
+                    <span className="link-icon">→</span>
+                    <span>About Us</span>
+                  </a></li>
+                  <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }} className="footer-link">
+                    <span className="link-icon">→</span>
+                    <span>Services</span>
+                  </a></li>
+                  <li><a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }} className="footer-link">
+                    <span className="link-icon">→</span>
+                    <span>Projects</span>
+                  </a></li>
+                  </ul>
+                  <ul>
+                  <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="footer-link">
+                    <span className="link-icon">→</span>
+                    <span>Contact</span>
+                  </a></li>
+                  <li><a href="#" className="footer-link">
+                    <span className="link-icon">→</span>
+                    <span>Case Studies</span>
+                  </a></li>
+                  <li><a href="#" className="footer-link">
+                    <span className="link-icon">→</span>
+                    <span>Blog</span>
+                  </a></li>
+                </ul>
+                </div>
+              </div>
+              
+              
               
               <div className="footer-newsletter" data-aos="fade-up" data-aos-delay="150">
                 <h4 className="footer-heading">Stay Updated</h4>
@@ -799,6 +805,7 @@ function App() {
           </div>
         </div>
       </footer>
+    </div>
     </div>
   )
 }
