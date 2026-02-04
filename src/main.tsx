@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import App from './App.tsx';
 import './index.css';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 // Initialize AOS
 AOS.init({
@@ -15,6 +16,7 @@ AOS.init({
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
+    <SpeedInsights />
     <App />
   </React.StrictMode>
 );
