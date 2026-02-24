@@ -329,61 +329,7 @@ function HomePage() {
               <p className="section-subtitle">Transforming ideas into digital reality with passion and precision</p>
             </div>
 
-            <div className="about-content">
-              <motion.div 
-                className="about-visual"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="tech-showcase">
-                  <div className="tech-orbit">
-                    <div className="center-core">
-                      <div className="core-inner"></div>
-                      <div className="core-pulse"></div>
-                    </div>
-                    <div className="orbit-item orbit-1" data-tech="React">
-                      <div className="tech-icon">⚛️</div>
-                      <span className="tech-label">React</span>
-                    </div>
-                    <div className="orbit-item orbit-2" data-tech="Node">
-                      <div className="tech-icon">🟢</div>
-                      <span className="tech-label">Node.js</span>
-                    </div>
-                    <div className="orbit-item orbit-3" data-tech="Cloud">
-                      <div className="tech-icon">☁️</div>
-                      <span className="tech-label">Cloud</span>
-                    </div>
-                    <div className="orbit-item orbit-4" data-tech="AI">
-                      <div className="tech-icon">🤖</div>
-                      <span className="tech-label">AI/ML</span>
-                    </div>
-                    <div className="orbit-item orbit-5" data-tech="Mobile">
-                      <div className="tech-icon">📱</div>
-                      <span className="tech-label">Mobile</span>
-                    </div>
-                    <div className="orbit-item orbit-6" data-tech="Database">
-                      <div className="tech-icon">🗄️</div>
-                      <span className="tech-label">Database</span>
-                    </div>
-                  </div>
-                  <div className="tech-stats">
-                    <div className="tech-stat">
-                      <span className="stat-value">50+</span>
-                      <span className="stat-name">Projects</span>
-                    </div>
-                    <div className="tech-stat">
-                      <span className="stat-value">15+</span>
-                      <span className="stat-name">Technologies</span>
-                    </div>
-                    <div className="tech-stat">
-                      <span className="stat-value">95%</span>
-                      <span className="stat-name">Success</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+            <div className="about-content single-column">
 
               <motion.div 
                 className="about-text"

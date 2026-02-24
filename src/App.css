@@ -775,6 +775,11 @@ section {
   margin-bottom: 4rem;
 }
 
+.about-content.single-column {
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
 /* About Visual - Tech Showcase */
 .about-visual {
   position: relative;
